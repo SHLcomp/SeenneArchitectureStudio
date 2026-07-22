@@ -1,0 +1,125 @@
+import "./Hero.scss";
+
+import video from "../../assets/videos/SasVid.mp4";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
+const Hero = () => {
+  const titleRef = useRef();
+  const contRef = useRef();
+  const descRef = useRef();
+
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+
+      // Desktop
+      mm.add("(min-width: 1025px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: contRef.current,
+              start: "top top",
+              end: "+=300",
+              scrub: 1,
+              pin: true,
+            },
+          })
+          .to(titleRef.current, {
+            y: "-23vh",
+            scale: 0.25,
+            ease: "none",
+          })
+          .to(descRef.current, {
+            y: "-70vh",
+            opacity: 1,
+            ease: "none",
+          });
+      });
+
+      // Tablets
+      mm.add("(min-width: 601px) and (max-width: 1024px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: contRef.current,
+              start: "top top",
+              end: "+=400",
+              scrub: 1,
+              pin: true,
+            },
+          })
+          .to(titleRef.current, {
+            y: "5vh",
+            scale: 0.62,
+            ease: "none",
+          })
+          .to(descRef.current, {
+            y: "-8vh",
+            opacity: 1,
+            ease: "none",
+          });
+      });
+
+      // Mobile
+      mm.add("(max-width: 600px)", () => {
+        gsap
+          .timeline({
+            scrollTrigger: {
+              trigger: contRef.current,
+              start: "top top",
+              end: "+=300",
+              scrub: 1,
+              pin: true,
+            },
+          })
+          .to(titleRef.current, {
+            y: "-3vh",
+            scale: 0.35,
+            ease: "none",
+          })
+          .to(descRef.current, {
+            y: "-11vh",
+            opacity: 1,
+            ease: "none",
+          });
+      });
+
+      return () => mm.revert();
+    },
+    { scope: contRef },
+  );
+
+  return (
+    <section className="hero" ref={contRef}>
+      <video autoPlay muted loop playsInline className="hero-video">
+        <source src={video} type="video/mp4" />
+      </video>
+
+      <div className="hero-cont">
+        <h1 className="title" ref={titleRef}>
+          SAS
+        </h1>
+
+        <div className="desc" ref={descRef}>
+          <p>Seenne Architecture Studio</p>
+
+          <p>Designed Around Human Experience</p>
+
+          <div className="cta-div">
+            <h3 className="cta1">Explore Works</h3>
+          </div>
+          <div className="scroll">
+            <h5>Scroll to explore</h5>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Hero;

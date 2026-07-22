@@ -1,0 +1,68 @@
+.cta-component {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    min-height: fit-content;
+    padding: 2em 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5em;
+
+    .cont {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 1em;
+        align-items: center;
+        padding: 1em 0;
+        width: 100%;
+        h1 {
+            font-size: 4em;
+            width: 50%;
+        }
+        .text{
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            width: 50%;
+            gap: 1em;
+            p{
+                font-size: 24px;
+            }
+        }
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background: var(--accent-color);
+        top: 0%;
+        align-self: center;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background: var(--accent-color);
+        bottom: 0%;
+        align-self: center;
+    }
+}
+
+@media (max-width:600px) {
+    .cont{
+        padding: 2em !important;
+        h1{
+            width: 100% !important;
+            font-size: 2em !important;
+        }
+        .text{
+            width: 100% !important;
+        }
+    }
+}

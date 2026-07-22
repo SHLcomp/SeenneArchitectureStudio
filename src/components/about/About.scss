@@ -1,0 +1,170 @@
+.about {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 2em;
+    margin-top: 2em;
+
+    .one {
+        padding: 10px 2em;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        flex: 1.1;
+        h3 {
+            margin-top: 2em;
+        }
+
+        h1 {
+            font-size: 3.5em;
+        }
+    }
+
+    .two {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        flex: 1;
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 10px;
+
+            p {
+                width: 80%;
+                font-size: 20px;
+                color: rgba(0, 0, 0, 0.701);
+            }
+
+            .infos {
+                display: flex;
+                width: 100%;
+                gap: 10px;
+                justify-content: space-between;
+
+                .info {
+                    flex: 1;
+                    background: #cdcdcd;
+                    padding: 16px;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                }
+            }
+        }
+
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background: var(--accent-color);
+        top: 0%;
+        align-self: center;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        width: 80%;
+        height: 2px;
+        background: var(--accent-color);
+        bottom: 0%;
+        align-self: center;
+    }
+}
+
+@media (max-width:600px) {
+    .about {
+        flex-direction: column;
+        gap: 1em;
+
+        .one {
+            width: 100%;
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+
+        .two {
+            .text {
+                padding-inline: 1em;
+
+                p {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    .about {
+        padding-inline: 2em;
+        gap: 2em;
+        align-items: center;
+
+        .one {
+            width: 60%;
+            padding: 0;
+
+            h1 {
+                font-size: 2.6em;
+                line-height: 1.2;
+            }
+
+            h3 {
+                margin-top: 1.5em;
+            }
+        }
+
+        .two {
+            width: 40%;
+
+            .text {
+                align-items: flex-start;
+
+                p {
+                    width: 100%;
+                    font-size: 18px;
+                    line-height: 1.7;
+                }
+
+                .infos {
+                    width: 100%;
+                    gap: .75em;
+                    justify-content: space-between;
+
+                    .info {
+                        flex: 1;
+                        padding: 16px;
+                        font-size: 18px;
+                        text-align: center;
+
+                        span {
+                            margin-top: .25em;
+                            font-size: .85rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        &::before,
+        &::after {
+            width: calc(100% - 4em);
+        }
+    }
+
+}

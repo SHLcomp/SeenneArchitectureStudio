@@ -1,0 +1,171 @@
+.contact{
+
+    width:min(1100px,90%);
+    margin:8rem auto;
+    padding:5rem;
+
+    display:flex;
+    flex-direction:column;
+    
+
+    align-items: start;
+    
+    background:white;
+    border:1px solid rgba(0,0,0,.08);
+    h1{
+        font-size: clamp(40px, 4em, 60px);
+    }
+
+    .intro{
+        max-width:650px;
+        color:rgba(0,0,0,.65);
+        line-height:1.8;
+        font-size:1.05rem;
+        
+    }
+
+    form{
+        padding-top: 2rem;
+        display:flex;
+        flex-direction:column;
+        gap:2rem;
+
+    }
+
+    .row{
+
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:2rem;
+
+    }
+
+    .field{
+
+        display:flex;
+        flex-direction:column;
+        gap:.8rem;
+
+        label{
+            font-size:.9rem;
+            letter-spacing:1px;
+            text-transform:uppercase;
+            color:#666;
+        }
+
+        input,
+        select,
+        textarea{
+
+            width:100%;
+
+            background:transparent;
+
+            border:none;
+            border-bottom:1px solid rgba(0,0,0,.25);
+
+            padding:1rem 0;
+
+            font-family:inherit;
+            font-size:1rem;
+
+            transition:.3s;
+
+            resize:none;
+
+            outline:none;
+
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus{
+
+            border-color:var(--accent-color);
+
+        }
+
+        textarea{
+
+            border:1px solid rgba(0,0,0,.15);
+            padding:1rem;
+
+        }
+
+    }
+
+    button{
+
+        align-self:flex-start;
+
+        margin-top:1rem;
+
+        transition:.35s;
+
+
+    }
+
+}
+
+@media (max-width:1024px){
+
+.contact{
+
+    width:92%;
+    padding:3rem;
+
+    .headline{
+
+        font-size:2.5rem;
+
+    }
+
+    .row{
+
+        gap:1.5rem;
+
+    }
+
+}
+
+}
+
+@media (max-width:600px){
+
+.contact{
+
+    padding:2rem;
+
+    margin:5rem auto;
+
+    .headline{
+
+        font-size:2rem;
+
+    }
+
+    .intro{
+
+        font-size:.95rem;
+
+    }
+
+    .row{
+
+        grid-template-columns:1fr;
+
+        gap:1rem;
+
+    }
+
+    button{
+
+        width:100%;
+
+        text-align:center;
+
+    }
+
+}
+
+}

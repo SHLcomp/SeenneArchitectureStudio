@@ -1,0 +1,63 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center center;
+    z-index: -2;
+    opacity: 75%;
+  }
+
+  .hero-cont {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+    align-items: center;
+
+    h1 {
+      font-size: clamp(10rem, 40vw, 40rem); //before scrolling
+      // font-size: 5em;// after scrolling
+      margin-top: -0.1em;
+      will-change: transform;
+    }
+
+    .desc {
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      .scroll{
+        color: rgba(0, 0, 0, 0.947);
+        text-transform: capitalize;
+        position: relative;
+        top: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .hero{
+    .hero-video{
+      opacity: 70%;
+    }
+    .hero-cont {
+
+    h1,
+    .desc {
+      position: relative;
+      top: 20vh;
+    }
+  }
+  }
+}
