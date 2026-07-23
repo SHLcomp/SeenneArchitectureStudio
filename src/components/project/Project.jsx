@@ -4,8 +4,8 @@ import "./Project.scss";
 const Project = ({project}) => {
   return (
     <div className="project">
-            <Link className="a" to={`/works/${project.id}`}><div className="img">
-             <img src={project.image} alt={project.title} />
+            <Link className="a" to={`/works/${project.slug}`}><div className="img">
+             <img src={project.thumbnail} alt={project.title} />
             </div></Link> 
 
             <div className="text">
@@ -15,7 +15,7 @@ const Project = ({project}) => {
               </div>
 
               <div className="desc">
-                <p>{project.description}</p>
+                <p>{project.shortDescription}</p>
               </div>
             </div>
           </div>

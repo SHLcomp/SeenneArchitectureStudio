@@ -13,6 +13,11 @@ const Works = () => {
       behavior: "instant",
     });
   }, [pathname]);
+
+  
+
+
+
   return (
     <div>
       <Navbar />

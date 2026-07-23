@@ -30,7 +30,7 @@ const Hero = () => {
         y: 300,
         opacity: 0,
         scale: 0.8,
-        duration:1,
+        duration:1.5,
         stagger: 0.1,
         ease: "power4.out",
       });

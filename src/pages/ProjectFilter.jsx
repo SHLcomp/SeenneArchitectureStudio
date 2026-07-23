@@ -13,7 +13,7 @@ const ProjectFilter = () => {
     });
   }, [pathname]);
   const { projId } = useParams();
-  const project = data.find((e) => e.id === Number(projId));
+  const project = data.find((e) => e.slug === projId);
   if (!project) return <h1 style={{ padding: "10vh" }}>Project Not Found</h1>;
   return (
     <div>
