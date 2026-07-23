@@ -17,7 +17,7 @@ const Projects = () => {
           <p className="cta2">View All</p>
         </Link>
       </div>
-
+      
       <div className="projects-cont">
         {featuredProjects.map((project) => (
           <Project project={project} key={project.id}/>

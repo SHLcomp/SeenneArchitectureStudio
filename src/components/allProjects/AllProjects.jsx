@@ -1,9 +1,9 @@
 import "./AllProjects.scss"
 import data from "../../assets/data/projects.js"
-import Project from "../project/project.jsx"
+import Project from "../project/Project.jsx"
 
 const AllProjects = () => {
-    
+
   return (
     <div className="allProjects">
         <div className="text">
