@@ -25,68 +25,29 @@
         padding: 20px 0px;
         gap: 1.3em;
 
-       .project {
-
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    cursor: pointer;
-
-
-    .img {
-        width:100%;
-        aspect-ratio: 16 / 10;
-        overflow:hidden;
-
-        img {
-            width:100%;
-            height:100%;
-            object-fit:cover;
-            transition:.5s ease;
-        }
     }
-
-
-    .text {
-
-        .info{
-            display:flex;
-            justify-content:space-between;
-        }
-
-        .desc p{
-            color:rgba(0,0,0,.616);
-        }
-    }
-
-
-    &:hover{
-        .img img{
-            transform:scale(1.1);
-        }
-    }
-}
-    }
-
 }
 
 @media (max-width:600px) {
-    .projects{
-        .div-tl{
+    .projects {
+        .div-tl {
             font-size: x-small;
             width: 100%;
         }
-        .projects-cont{
+
+        .projects-cont {
             width: 100%;
-            .project{
+
+            .project {
                 width: 100vw;
-                .img{
+
+                .img {
                     width: 100%;
                     height: fit-content !important;
-                    img{
-                        height:fit-content;
-                        width: 100% ;
+
+                    img {
+                        height: fit-content;
+                        width: 100%;
                     }
                 }
             }

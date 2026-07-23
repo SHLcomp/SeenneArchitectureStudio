@@ -6,6 +6,7 @@ import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -26,11 +27,11 @@ const Hero = () => {
       // SAS entrance
 
       tl.from(split.chars, {
-        y: 100,
+        y: 300,
         opacity: 0,
         scale: 0.8,
-        duration: 1,
-        stagger: 0.08,
+        duration:1,
+        stagger: 0.1,
         ease: "power4.out",
       });
 
@@ -41,7 +42,7 @@ const Hero = () => {
             scrollTrigger: {
               trigger: contRef.current,
               start: "top top",
-              end: "+=1000",
+              end: "+=1200",
               scrub: 1,
               pin: true,
             },
@@ -53,7 +54,7 @@ const Hero = () => {
           })
           .to(descRef.current, {
             y: "-60vh",
-            opacity: 1,
+            opacity: "100%",
             ease: "none",
           });
       });
@@ -65,7 +66,7 @@ const Hero = () => {
             scrollTrigger: {
               trigger: contRef.current,
               start: "top top",
-              end: "+=100",
+              end: "+=700",
               scrub: 1,
               pin: true,
             },
@@ -74,6 +75,7 @@ const Hero = () => {
             y: "5vh",
             scale: 0.62,
             ease: "none",
+            opacity: 1
           })
           .to(descRef.current, {
             y: "8vh",
@@ -89,7 +91,7 @@ const Hero = () => {
             scrollTrigger: {
               trigger: contRef.current,
               start: "top top",
-              end: "+=300",
+              end: "+=1000",
               scrub: 1,
               pin: true,
             },
@@ -128,7 +130,7 @@ const Hero = () => {
           <p>Designed Around Human Experience</p>
 
           <div className="cta-div">
-            <h3 className="cta1">Explore Works</h3>
+            <Link to={"/works"} className="a"><h3 className="cta1">Explore Works</h3></Link>
           </div>
           <div className="scroll">
             <h5>Scroll to explore</h5>
