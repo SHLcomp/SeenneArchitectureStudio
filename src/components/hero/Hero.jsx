@@ -5,8 +5,9 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const Hero = () => {
   const titleRef = useRef();
@@ -17,6 +18,22 @@ const Hero = () => {
     () => {
       const mm = gsap.matchMedia();
 
+      const tl = gsap.timeline();
+      const split = SplitText.create(titleRef.current, {
+        type: "chars",
+      });
+
+      // SAS entrance
+
+      tl.from(split.chars, {
+        y: 100,
+        opacity: 0,
+        scale: 0.8,
+        duration: 1,
+        stagger: 0.08,
+        ease: "power4.out",
+      });
+
       // Desktop
       mm.add("(min-width: 1025px)", () => {
         gsap
@@ -24,7 +41,7 @@ const Hero = () => {
             scrollTrigger: {
               trigger: contRef.current,
               start: "top top",
-              end: "+=100",
+              end: "+=1000",
               scrub: 1,
               pin: true,
             },
@@ -35,7 +52,7 @@ const Hero = () => {
             ease: "none",
           })
           .to(descRef.current, {
-            y: "-70vh",
+            y: "-60vh",
             opacity: 1,
             ease: "none",
           });
@@ -48,7 +65,7 @@ const Hero = () => {
             scrollTrigger: {
               trigger: contRef.current,
               start: "top top",
-              end: "+=400",
+              end: "+=100",
               scrub: 1,
               pin: true,
             },
@@ -59,7 +76,7 @@ const Hero = () => {
             ease: "none",
           })
           .to(descRef.current, {
-            y: "-8vh",
+            y: "8vh",
             opacity: 1,
             ease: "none",
           });
