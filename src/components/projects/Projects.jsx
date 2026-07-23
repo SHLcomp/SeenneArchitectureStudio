@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Projects.scss";
 import projects from "../../assets/data/projects.js"; 
-import Project from "../project/project.jsx";
+import Project from "../project/Project.jsx";
 
 const Projects = () => {
   const featuredProjects = projects.filter(project => project.priority);
